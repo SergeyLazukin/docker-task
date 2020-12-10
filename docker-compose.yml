@@ -7,7 +7,7 @@ services:
     env_file:
       - mongo.env
     volumes:
-    - ./mongo/data/db:/data/db
+    - mongodata:/data/db
 
   mongo-express:
     image: mongo-express
@@ -35,3 +35,5 @@ services:
       - mongo
     ports:
     - 8080:8080
+volumes:
+  mongodata:
